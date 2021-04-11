@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Financy App</string>
+    <string name="bem_vindo_ao_seu_app_de_financiamento_online">Bem vindo ao seu app de financiamento online.</string>
+    <string name="financy_app">Financy App</string>
+    <string name="escolha_o_tipo_de_ve_culo">Escolha o tipo de veículo</string>
+    <string name="selecione_o_ano">Selecione o ano</string>
+
+    <string-array name="select_type_vehicle">
+        <item>Moto</item>
+        <item>Carro</item>
+    </string-array>
+    <string-array name="select_brand_vehicle">
+        <item>Ducatti</item>
+        <item>Fiat</item>
+        <item>Kawasaki</item>
+        <item>Honda</item>
+        <item>Toyota</item>
+        <item>Volkswagem</item>
+        <item>Yamanha</item>
+    </string-array>
+    <string-array name="select_model_vehicle">
+        <item>Todos os modelos</item>
+    </string-array>
+    <string-array name="select_year_vehicle">
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+    </string-array>
+    <string-array name="select_parcels_vehicle">
+        <item>6x</item>
+        <item>12x</item>
+        <item>18x</item>
+        <item>24x</item>
+        <item>30x</item>
+        <item>36x</item>
+        <item>42x</item>
+        <item>48x</item>
+        <item>54x</item>
+        <item>60x</item>
+        <item>66x</item>
+        <item>72x</item>
+        <item>78x</item>
+        <item>86x</item>
+        <item>92x</item>
+        <item>98x</item>
+    </string-array>
+</resources>
