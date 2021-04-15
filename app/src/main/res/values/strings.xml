@@ -12,10 +12,12 @@
     <string name="_24x">24x</string>
     <string name="r_36_590_45">R$ 36.590.45</string>
     <string name="selecione_a_qunatidade_de_parcelas">Selecione a qunatidade de parcelas</string>
+    <string name="digite_a_taxa_de_juros_anuais_a_a">Digite a taxa de juros anuais a.a.</string>
 
     <string-array name="select_parcels_vehicle">
-        <item>24x</item>
-        <item>36x</item>
-        <item>48x</item>
+        <item>24</item>
+        <item>36</item>
+        <item>48</item>
+        <item>60</item>
     </string-array>
 </resources>
