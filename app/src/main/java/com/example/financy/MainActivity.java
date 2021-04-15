@@ -10,8 +10,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    String selectedParcelsValue;
+    Button calculateButton;
+    EditText vehicleValueTextEdit;
+    EditText enterValueTextEdit;
+    EditText feeValueTextEdit;
+    TextView output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +32,39 @@ public class MainActivity extends AppCompatActivity {
         parcelAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         selectParcelVehicle.setAdapter(parcelAdapter);
 
-        Button calculateButton = (Button) findViewById(R.id.calculateButton);
-        EditText vehicleValueTextEdit = (EditText) findViewById(R.id.vehicleValueTextEdit);
-        EditText enterValueTextEdit = (EditText) findViewById(R.id.enterValueTextEdit);
-        EditText feeValueTextEdit = (EditText) findViewById(R.id.feeValueTextEdit);
+        calculateButton = (Button) findViewById(R.id.calculateButton);
+        vehicleValueTextEdit = (EditText) findViewById(R.id.vehicleValueTextEdit);
+        enterValueTextEdit = (EditText) findViewById(R.id.enterValueTextEdit);
+        feeValueTextEdit = (EditText) findViewById(R.id.feeValueTextEdit);
+        output = (TextView) findViewById(R.id.totalValue);
 
-        calculateButton.setOnClickListener(new View.OnClickListener() {
+//        calculateButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.v("item", enterValueTextEdit.getText().toString());
+//            }
+//        });
+
+        selectParcelVehicle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                Log.v("item", vehicleValueTextEdit.getText().toString());
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.v("item", (String) parent.getItemAtPosition(position));
+                selectedParcelsValue = (String) ((String) parent.getItemAtPosition(position)).split("x")[0];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
+    }
+
+    public void calculate(View view) {
+        Log.v("VehicleValue", vehicleValueTextEdit.getText().toString());
+        Log.v("EnterValue", enterValueTextEdit.getText().toString());
+        Log.v("FeeValue", feeValueTextEdit.getText().toString());
+        Log.v("Parcels", selectedParcelsValue);
+
+        output.setText("R$ 19.800,00");
     }
 }

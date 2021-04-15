@@ -12,6 +12,7 @@
     <string name="_24x">24x</string>
     <string name="r_36_590_45">R$ 36.590.45</string>
     <string name="selecione_a_qunatidade_de_parcelas">Selecione a qunatidade de parcelas</string>
+    <string name="equalsSymbol">=</string>
 
     <string-array name="select_parcels_vehicle">
         <item>24x</item>
