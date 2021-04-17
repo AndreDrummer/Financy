@@ -37,21 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcularFinanceiro(View v) {
         if (validateCampoValorCarro() && validateCampoValorEntrada() && validateCampoJuros()) {
-            float valor_carro = Float.valueOf(vehicleValueTextEdit.getText().toString());
-            float valor_entrada = Float.valueOf(enterValueTextEdit.getText().toString());
-            float valor_liquido = valor_carro - valor_entrada;
-            float taxa_juros_anual = Float.valueOf(feeValueTextEdit.getText().toString());
-            int qtd_parcelas = Integer.valueOf(selectParcelVehicle.getSelectedItem().toString());
-            float taxa_juros_mensal;
-            float vlr_prestacao;
-            float coeficiente_financiamento;
-            taxa_juros_mensal = (float) (Math.pow((1 + (taxa_juros_anual / 100)), (1.0 / 12.0)) - 1);
-            coeficiente_financiamento = (float) (taxa_juros_mensal / (1 - Math.pow(1 + taxa_juros_mensal, -qtd_parcelas)));
-            vlr_prestacao = (float) (valor_liquido * coeficiente_financiamento);
+            Financiamento financiamento = new Financiamento(Float.valueOf(vehicleValueTextEdit.getText().toString()),
+                    Float.valueOf(enterValueTextEdit.getText().toString()),
+                    Float.valueOf(feeValueTextEdit.getText().toString()),
+                    Integer.valueOf(selectParcelVehicle.getSelectedItem().toString()));
+            float vlr_prestacao = financiamento.calculaFinanciamento();
             DecimalFormat df = new DecimalFormat("###,###,###,##0.00");
             valor_parcelas.setText("R$ " + df.format(vlr_prestacao));
-            total_juros.setText("R$ " + df.format((vlr_prestacao * qtd_parcelas) - valor_liquido));
-            valor_final.setText("R$ " + df.format(vlr_prestacao * qtd_parcelas));
+            total_juros.setText("R$ " + df.format((vlr_prestacao * financiamento.getQtd_parcelas()) - financiamento.getValor_liquido()));
+            valor_final.setText("R$ " + df.format(vlr_prestacao * financiamento.getQtd_parcelas()));
         }
     }
 
