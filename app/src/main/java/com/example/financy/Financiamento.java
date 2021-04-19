@@ -9,10 +9,10 @@ public class Financiamento {
 
 
     public Financiamento(float valor_carro, float valor_entrada,  float taxa_juros_anual, int qtd_parcelas) {
-        this.valor_carro = valor_carro;
-        this.valor_entrada = valor_entrada;
-        this.taxa_juros_anual = taxa_juros_anual;
-        this.qtd_parcelas = qtd_parcelas;
+        setValor_carro(valor_carro);
+        setValor_entrada(valor_entrada);
+        setTaxa_juros_anual(taxa_juros_anual);
+        setQtd_parcelas(qtd_parcelas);
     }
 
     public float getValor_carro() {
