@@ -14,6 +14,7 @@
     <string name="selecione_a_qunatidade_de_parcelas">Selecione a qunatidade de parcelas</string>
     <string name="digite_a_taxa_de_juros_anuais_a_a">Digite a taxa de juros anuais a.a.</string>
 
+
     <string-array name="select_parcels_vehicle">
         <item>24</item>
         <item>36</item>

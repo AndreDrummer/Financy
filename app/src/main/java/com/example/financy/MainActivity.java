@@ -11,13 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
     TextView valor_final, valor_parcelas, total_juros;
     EditText vehicleValueTextEdit, enterValueTextEdit, feeValueTextEdit;
     Spinner selectParcelVehicle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,5 +90,15 @@ public class MainActivity extends AppCompatActivity {
             feeValueTextEdit.setError(null);
             return true;
         }
+
+    }
+
+    public void calculate(View view) {
+        Log.v("VehicleValue", vehicleValueTextEdit.getText().toString());
+        Log.v("EnterValue", enterValueTextEdit.getText().toString());
+        Log.v("FeeValue", feeValueTextEdit.getText().toString());
+        Log.v("Parcels", selectedParcelsValue);
+
+        output.setText("R$ 19.800,00");
     }
 }
